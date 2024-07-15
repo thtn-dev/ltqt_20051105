@@ -17,7 +17,7 @@ function App() {
     <Container maxW="container.sm" p="0">
       <Flex
         h="100vh"
-        maxH="100vh"
+        maxH="100dvh"
         justifyContent={"center"}
         alignItems={"center"}
         direction={"column"}
