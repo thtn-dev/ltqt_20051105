@@ -8,10 +8,21 @@ import {
   ModalFooter,
   ModalOverlay,
   useDisclosure,
+  Box,
 } from "@chakra-ui/react";
-import { faEllipsis } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCircleQuestion,
+  faEllipsis,
+  faHeart,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
+import Lottie from "lottie-react";
+import data from "../../data/lottie/capybara_animation.json";
+
+function Capybara() {
+  return <Lottie animationData={data} loop={true} autoplay={true} />;
+}
 
 function Modal001() {
   const { isOpen, onClose, onOpen } = useDisclosure();
@@ -44,27 +55,42 @@ function Modal001() {
         <ModalContent
           mx={3}
           borderRadius={"1.25rem"}
-          bg="red.800"
-          color="white"
+          h={"16rem"}
+          pos="relative"
+          overflow={"hidden"}
+          bg="blue.500"
+          color={"white"}
         >
-          <ModalHeader>Câu hỏi</ModalHeader>
-          <ModalBody>
-            <Text>
-              Bạn có phải là <b>Quỳnh Thương</b> không?
+          <Box pos="absolute" w={32} right={0} bottom={"72px"}>
+            <Capybara />
+          </Box>
+          <ModalHeader bg="orange.400" fontWeight={"bold"}>
+            <FontAwesomeIcon icon={faCircleQuestion} spinPulse />
+            &nbsp;&nbsp;Cho hỏi cái này
+          </ModalHeader>
+          <ModalBody textAlign={"center"}>
+            <Text fontSize={18} fontWeight={"600"}>
+              Bạn có phải là{" "}
+              <Text as="b" color={"yellow.300"}>
+                Quỳnh Thương dễ thương
+              </Text>{" "}
+              không?
             </Text>
           </ModalBody>
-          <ModalFooter>
+          <ModalFooter bg="orange.400">
             <Button
               onClick={handleClick}
               colorScheme="gray"
-              color={"red.800"}
               w="100%"
               mr={3}
               borderRadius={"full"}
               isLoading={isLoading}
+              color={"orange.400"}
               spinner={<FontAwesomeIcon size="2x" icon={faEllipsis} fade />}
+              rightIcon={<FontAwesomeIcon icon={faHeart} beatFade />}
+              leftIcon={<FontAwesomeIcon icon={faHeart} beatFade />}
             >
-              Đúng vậy
+              &nbsp;&nbsp;Đúng vậy&nbsp;&nbsp;
             </Button>
           </ModalFooter>
         </ModalContent>

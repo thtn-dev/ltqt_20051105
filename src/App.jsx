@@ -5,8 +5,7 @@ import ScrollIndicator from "./components/ScrollIndicator";
 import { motion } from "framer-motion";
 import HeartBackground from "./components/HeartBackground/HeartBackground";
 import Modal001 from "./components/Modal001/Modal001";
-// import LoveTree from "./components/LoveTree";
-// import Letter from "./components/Letter/Letter";
+import Letter from "./components/Letter/Letter";
 
 function App() {
   const { setColorMode } = useColorMode();
@@ -47,18 +46,18 @@ function App() {
         </motion.div>
         <ScrollIndicator />
       </Flex>
-      {/* <Flex h="100vh" maxH="100vh">
-        <LoveTree />
-      </Flex>
+
       <Flex
+        id="letter-ltqt"
         bg="pink.700"
-        h="100vh"
-        maxH="100vh"
+        h="100dvh"
+        maxH="100dvh"
         justifyContent={"center"}
         alignItems={"center"}
+        bgGradient="linear(to-t, pink.500, #e65758)"
       >
         <Letter />
-      </Flex> */}
+      </Flex>
     </Container>
   );
 }

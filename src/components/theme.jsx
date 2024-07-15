@@ -5,11 +5,11 @@ const config = {
   initialColorMode: "light",
   useSystemColorMode: false,
   styles: {
-    global: () => ({
+    global: {
       html: {
         scrollBehavior: "smooth",
       },
-    }),
+    },
   },
 };
 
