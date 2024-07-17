@@ -50,7 +50,7 @@ function Modal001() {
       >
         <ModalOverlay
           bg="blackAlpha.300"
-          backdropFilter="blur(16px) hue-rotate(38deg)"
+          backdropFilter="blur(9px) hue-rotate(38deg)"
         />
         <ModalContent
           mx={3}
@@ -65,7 +65,7 @@ function Modal001() {
             <Capybara />
           </Box>
           <ModalHeader bg="orange.400" fontWeight={"bold"}>
-            <FontAwesomeIcon icon={faCircleQuestion} spinPulse />
+            <FontAwesomeIcon icon={faCircleQuestion} />
             &nbsp;&nbsp;Cho hỏi cái này
           </ModalHeader>
           <ModalBody textAlign={"center"}>
@@ -87,8 +87,8 @@ function Modal001() {
               isLoading={isLoading}
               color={"orange.400"}
               spinner={<FontAwesomeIcon size="2x" icon={faEllipsis} fade />}
-              rightIcon={<FontAwesomeIcon icon={faHeart} beatFade />}
-              leftIcon={<FontAwesomeIcon icon={faHeart} beatFade />}
+              rightIcon={<FontAwesomeIcon icon={faHeart} />}
+              leftIcon={<FontAwesomeIcon icon={faHeart} />}
             >
               &nbsp;&nbsp;Đúng vậy&nbsp;&nbsp;
             </Button>
