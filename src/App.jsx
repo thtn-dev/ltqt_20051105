@@ -1,7 +1,9 @@
 import {
+  Box,
   Container,
   Flex,
   Image,
+  Stack,
   Tag,
   Text,
   useColorMode,
@@ -13,26 +15,8 @@ import { motion } from "framer-motion";
 import HeartBackground from "./components/HeartBackground/HeartBackground";
 import Modal001 from "./components/Modal001/Modal001";
 import Letter from "./components/Letter/Letter";
-import InfinitySlider from "./components/InfinitySilder/InfinitySlider";
-import CountUp from "./components/CountUp";
-function calculateDaysPassed(startDate) {
-  // Chuyển đổi startDate thành đối tượng Date
-  const start = new Date(startDate);
-  // Lấy ngày hiện tại
-  const today = new Date();
+import Center from "./components/Center";
 
-  // Đặt giờ, phút, giây, mili giây về 0 để so sánh chỉ ngày
-  start.setHours(0, 0, 0, 0);
-  today.setHours(0, 0, 0, 0);
-
-  // Tính hiệu số thời gian giữa hai ngày
-  const differenceInTime = today.getTime() - start.getTime();
-
-  // Chuyển đổi hiệu số thời gian thành số ngày
-  const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
-
-  return differenceInDays;
-}
 function App() {
   const { setColorMode } = useColorMode();
   useEffect(() => {
@@ -71,27 +55,30 @@ function App() {
           </Tag>
         </motion.div>
         <ScrollIndicator />
-      </Flex> */}
-      <Flex
+      </Flex>
+      <Box h={"80rem"} bgGradient="linear(to-t, #0a2342, #e65758)" /> */}
+      <Box
         id="s2"
         h="100dvh"
         maxH="100dvh"
         bgGradient="linear(to-t,#283e51,#0a2342)"
-        justifyContent={"center"}
-        alignItems={"center"}
+        pos={"relative"}
       >
-        {/* <Image src="2iiB.gif" /> */}
-        {/* <InfinitySlider /> */}
-        <CountUp
-          from={0}
-          to={calculateDaysPassed("2024-04-03")}
-          duration={3.5}
+        <Image
+          src="2iiB.gif"
+          h="100%"
+          w={"100%"}
+          pos={"absolute"}
+          top={0}
+          left={0}
         />
-        <Text color={"white"} fontSize={"4rem"} fontWeight={"bold"}>
-          &nbsp;ngày
-        </Text>
-      </Flex>
-      {/* <Flex
+        <Center />
+        {/* <Box w="100%" position={"absolute"} bottom={4}>
+          <InfinitySlider />
+        </Box> */}
+      </Box>
+      {/* <Box h={"80rem"} bgGradient="linear(to-t,  #e65758,#283e51)" />
+      <Flex
         id="letter-ltqt"
         h="100dvh"
         maxH="100dvh"

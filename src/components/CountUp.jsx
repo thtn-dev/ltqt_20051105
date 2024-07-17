@@ -39,7 +39,18 @@ const AnimatedCounter = ({ from, to, duration, animationOptions }) => {
   }, [ref, inView, from, to, animationOptions, duration]);
 
   return (
-    <Text color={"white"} fontSize={"4rem"} fontWeight={"bold"} ref={ref} />
+    <>
+      <Text
+        as="span"
+        color={"white"}
+        fontSize={"4rem"}
+        fontWeight={"bold"}
+        ref={ref}
+      />{" "}
+      <Text as="span" color={"white"} fontSize={"4rem"} fontWeight={"bold"}>
+        &nbsp;ngày
+      </Text>{" "}
+    </>
   );
 };
 

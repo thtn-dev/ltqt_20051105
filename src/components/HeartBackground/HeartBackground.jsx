@@ -24,7 +24,7 @@ function Heart() {
 }
 
 function HeartBackground() {
-  const hearts = Array.from({ length: 3 }).map((_, index) => (
+  const hearts = Array.from({ length: 5 }).map((_, index) => (
     <Heart key={index} />
   ));
   return <div className={styles.wrapper}>{hearts}</div>;
