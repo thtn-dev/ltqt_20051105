@@ -118,8 +118,8 @@ function Center() {
             ease: "easeInOut",
           }}
         >
-          <Tag as={"a"} href="#s3" mb={2} borderRadius={"full"} px={3} py={2}>
-            <Text fontWeight="700" fontSize="md" color={"gray.800"}>
+          <Tag as={"a"} href="#s3" mb={2} borderRadius={"full"} px={1} py={1}>
+            <Text fontWeight="800" fontSize="sm" color={"gray.800"}>
               Bấm để xuống dưới!
             </Text>
           </Tag>

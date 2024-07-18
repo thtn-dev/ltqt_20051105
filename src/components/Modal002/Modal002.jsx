@@ -106,7 +106,9 @@ function Modal002({ isOpen, onClose }) {
                 <Button
                   onClick={() => {
                     console.log("click");
-                    setVisible(true);
+                    setTimeout(() => {
+                      setVisible(true);
+                    }, 333);
                   }}
                   fontWeight={800}
                   fontSize={24}
