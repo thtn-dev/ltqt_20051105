@@ -3,7 +3,6 @@ import {
   Container,
   Flex,
   Image,
-  Stack,
   Tag,
   Text,
   useColorMode,
@@ -24,7 +23,7 @@ function App() {
   }, [setColorMode]);
   return (
     <Container maxW="container.sm" p="0">
-      {/* <Flex
+      <Flex
         h="100vh"
         maxH="100dvh"
         justifyContent={"center"}
@@ -37,26 +36,34 @@ function App() {
       >
         <HeartBackground />
         <Modal001 />
-        <motion.div
-          animate={{
-            y: [0, 10, 0],
-            opacity: [1, 0.7, 1],
-          }}
-          transition={{
-            duration: 1.5,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+        <Flex
+          justifyContent={"center"}
+          alignItems={"center"}
+          direction={"column"}
+          pos={"absolute"}
+          bottom={10}
         >
-          <Tag as={"a"} href="#s2" mb={2} borderRadius={"full"} px={3} py={2}>
-            <Text fontWeight="bold" fontSize="lg" color={"#771D32"}>
-              Kéo xuống dưới!
-            </Text>
-          </Tag>
-        </motion.div>
-        <ScrollIndicator />
+          <motion.div
+            animate={{
+              y: [0, 10, 0],
+              opacity: [1, 0.7, 1],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <Tag as={"a"} href="#s2" mb={2} borderRadius={"full"} px={3} py={2}>
+              <Text fontWeight="bold" fontSize="md" color={"#771D32"}>
+                Bấm để xuống dưới!
+              </Text>
+            </Tag>
+          </motion.div>
+          <ScrollIndicator />
+        </Flex>
       </Flex>
-      <Box h={"80rem"} bgGradient="linear(to-t, #0a2342, #e65758)" /> */}
+      <Box h={"80rem"} bgGradient="linear(to-t, #0a2342, #e65758)" />
       <Box
         id="s2"
         h="100dvh"
@@ -73,13 +80,10 @@ function App() {
           left={0}
         />
         <Center />
-        {/* <Box w="100%" position={"absolute"} bottom={4}>
-          <InfinitySlider />
-        </Box> */}
       </Box>
-      {/* <Box h={"80rem"} bgGradient="linear(to-t,  #e65758,#283e51)" />
+      <Box h={"80rem"} bgGradient="linear(to-t,  #e65758,#283e51)" />
       <Flex
-        id="letter-ltqt"
+        id="s3"
         h="100dvh"
         maxH="100dvh"
         justifyContent={"center"}
@@ -87,7 +91,7 @@ function App() {
         bgGradient="linear(to-t, pink.500, #e65758)"
       >
         <Letter />
-      </Flex> */}
+      </Flex>
     </Container>
   );
 }

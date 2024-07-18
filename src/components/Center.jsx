@@ -7,11 +7,19 @@ import {
   StepStatus,
   StepTitle,
   StepSeparator,
+  Image,
+  Tag,
+  Text,
+  Flex,
 } from "@chakra-ui/react";
 import AnimatedCounter from "./CountUp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
+import data from "../data/lottie/cute.json";
+import Lottie from "lottie-react";
+import ScrollIndicator from "./ScrollIndicator";
+
 function calculateDaysPassed(startDate) {
   // Chuyển đổi startDate thành đối tượng Date
   const start = new Date(startDate);
@@ -85,6 +93,39 @@ function Center() {
           ))}
         </Stepper>
       </Box>
+      <Box pos={"absolute"} bottom={0}>
+        <Image src="land.png" w="100%" />
+        <Box w={40} pos={"absolute"} bottom={16} right={0}>
+          <Lottie animationData={data} />
+        </Box>
+      </Box>
+      <Flex
+        w={"100%"}
+        bottom={10}
+        justifyContent={"center"}
+        alignItems={"center"}
+        direction={"column"}
+        position={"absolute"}
+      >
+        <motion.div
+          animate={{
+            y: [0, 10, 0],
+            opacity: [1, 0.7, 1],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Tag as={"a"} href="#s3" mb={2} borderRadius={"full"} px={3} py={2}>
+            <Text fontWeight="700" fontSize="md" color={"gray.800"}>
+              Bấm để xuống dưới!
+            </Text>
+          </Tag>
+        </motion.div>
+        <ScrollIndicator />
+      </Flex>
     </Box>
   );
 }
