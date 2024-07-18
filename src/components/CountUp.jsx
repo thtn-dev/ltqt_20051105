@@ -1,6 +1,8 @@
 import { useRef, useEffect } from "react";
 import { animate, useInView } from "framer-motion";
-import { Text } from "@chakra-ui/react";
+import { Tag, TagLabel, TagLeftIcon, Text } from "@chakra-ui/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 
 const AnimatedCounter = ({ from, to, duration, animationOptions }) => {
   const ref = useRef(null);
@@ -39,18 +41,17 @@ const AnimatedCounter = ({ from, to, duration, animationOptions }) => {
   }, [ref, inView, from, to, animationOptions, duration]);
 
   return (
-    <>
-      <Text
-        as="span"
-        color={"white"}
-        fontSize={"4rem"}
-        fontWeight={"bold"}
-        ref={ref}
-      />{" "}
-      <Text as="span" color={"white"} fontSize={"4rem"} fontWeight={"bold"}>
-        &nbsp;ngày
-      </Text>{" "}
-    </>
+    <Tag
+      bg={"whiteAlpha.600"}
+      py={3}
+      px={6}
+      borderRadius={"full"}
+      boxShadow={"lg"}
+    >
+      <TagLabel fontSize={"3rem"} fontWeight={"bold"}>
+        <Text as="span" ref={ref} /> <Text as="span">&nbsp;ngày</Text>{" "}
+      </TagLabel>
+    </Tag>
   );
 };
 

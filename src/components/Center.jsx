@@ -43,7 +43,7 @@ function getFormattedDate() {
 const steps = [{ title: "03/04/2024" }, { title: getFormattedDate() }];
 function Center() {
   const { activeStep } = useSteps({
-    index: 1,
+    index: 0,
     count: steps.length,
   });
 
@@ -56,13 +56,13 @@ function Center() {
           duration={5}
         />
       </Box>
-      <Box color="white" mx={12} py={12}>
+      <Box color="white" mx={4} py={12}>
         <Stepper
           as={motion.div}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          size="lg"
+          size="sm"
           colorScheme="red"
           index={activeStep}
         >
@@ -70,9 +70,11 @@ function Center() {
             <Step key={index}>
               <StepIndicator>
                 <StepStatus
-                  complete={<FontAwesomeIcon icon={faHeart} beatFade />}
-                  incomplete={<FontAwesomeIcon icon={faHeart} />}
-                  active={<FontAwesomeIcon icon={faHeart} />}
+                  complete={
+                    <FontAwesomeIcon icon={faHeart} beatFade size="xs" />
+                  }
+                  incomplete={<FontAwesomeIcon icon={faHeart} size="xs" />}
+                  active={<FontAwesomeIcon icon={faHeart} size="xs" />}
                 />
               </StepIndicator>
               <Box flexShrink="0">
