@@ -8,7 +8,7 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import "./App.css";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import ScrollIndicator from "./components/ScrollIndicator";
 import { motion } from "framer-motion";
 import HeartBackground from "./components/HeartBackground/HeartBackground";
@@ -18,6 +18,13 @@ import Center from "./components/Center";
 
 function App() {
   const { setColorMode } = useColorMode();
+
+  const audioRef = useRef(null);
+
+  const handleAudioPlay = () => {
+    audioRef.current.play();
+  };
+
   useEffect(() => {
     setColorMode("light");
   }, [setColorMode]);
@@ -35,7 +42,11 @@ function App() {
         pos={"relative"}
       >
         <HeartBackground />
-        <Modal001 />
+        <Modal001 onClickCb={handleAudioPlay} />
+        <audio ref={audioRef}>
+          <source src="noinaycoanh.mp3" type="audio/mpeg" />
+          Your browser does not support the audio element.
+        </audio>
         <Flex
           justifyContent={"center"}
           alignItems={"center"}

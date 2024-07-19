@@ -24,7 +24,7 @@ function Capybara() {
   return <Lottie animationData={data} loop={true} autoplay={true} />;
 }
 
-function Modal001() {
+function Modal001({ onClickCb }) {
   const { isOpen, onClose, onOpen } = useDisclosure();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -33,6 +33,7 @@ function Modal001() {
     setTimeout(() => {
       setIsLoading(false);
       onClose();
+      onClickCb();
     }, 1234);
   };
 
