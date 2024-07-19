@@ -58,6 +58,13 @@ function Center() {
   return (
     <Box w={"100%"} h="100%" position={"relative"}>
       <Box textAlign={"center"} w={"100%"} position={"absolute"} top={32}>
+        <Text fontSize={28} fontWeight={"800"} color={"whiteAlpha.700"} mb={4}>
+          Gặp{" "}
+          <Text as="span" color={"pink.400"}>
+            Quỳnh Thương
+          </Text>{" "}
+          được
+        </Text>
         <AnimatedCounter
           from={0}
           to={calculateDaysPassed("2024-04-03")}
@@ -70,7 +77,7 @@ function Center() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          size="sm"
+          size="md"
           colorScheme="red"
           index={activeStep}
         >
@@ -79,10 +86,10 @@ function Center() {
               <StepIndicator>
                 <StepStatus
                   complete={
-                    <FontAwesomeIcon icon={faHeart} beatFade size="xs" />
+                    <FontAwesomeIcon icon={faHeart} beatFade size="lg" />
                   }
-                  incomplete={<FontAwesomeIcon icon={faHeart} size="xs" />}
-                  active={<FontAwesomeIcon icon={faHeart} size="xs" />}
+                  incomplete={<FontAwesomeIcon icon={faHeart} size="lg" />}
+                  active={<FontAwesomeIcon icon={faHeart} size="lg" />}
                 />
               </StepIndicator>
               <Box flexShrink="0">
@@ -95,7 +102,7 @@ function Center() {
       </Box>
       <Box pos={"absolute"} bottom={0}>
         <Image src="land.png" w="100%" />
-        <Box w={40} pos={"absolute"} bottom={16} right={0}>
+        <Box w={40} pos={"absolute"} bottom={14} right={0}>
           <Lottie animationData={data} />
         </Box>
       </Box>

@@ -42,13 +42,13 @@ const AnimatedCounter = ({ from, to, duration, animationOptions }) => {
 
   return (
     <Tag
-      bg={"whiteAlpha.600"}
+      bg={"whiteAlpha.700"}
       py={3}
       px={6}
       borderRadius={"full"}
       boxShadow={"lg"}
     >
-      <TagLabel fontSize={"3rem"} fontWeight={"bold"}>
+      <TagLabel fontSize={"2.75rem"} fontWeight={"bold"}>
         <Text as="span" ref={ref} /> <Text as="span">&nbsp;ngày</Text>{" "}
       </TagLabel>
     </Tag>
